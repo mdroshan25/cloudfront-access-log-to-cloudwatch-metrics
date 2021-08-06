@@ -71,7 +71,7 @@ def parse_log_file(logfile, bucket):
 
     with gzip.open(save_to, 'rt') as logdata:
         result = csv.DictReader(logdata)
-            for row in in results:
+            for row in results:
                 if len(metrics) == 20:
                     put_to_cloudwatch(metrics)
                     del metrics[:]
